@@ -123,14 +123,14 @@ def apply_theme(theme):
     backgroundcolorforbutton = current_theme["backgroundcolorforbutton"]
     foregroundcolor = current_theme["foregroundcolor"]
 
-    # Обновим цвета главного окна
+    # Update the colors of the main window
     root.configure(bg=backgroundcolor)
     status_label.configure(bg=backgroundcolor, fg=foregroundcolor)
     info_label.configure(bg=backgroundcolor, fg=foregroundcolor)
     info_label1.configure(bg=backgroundcolor, fg=foregroundcolor)
     root.iconphoto(False, ImageTk.PhotoImage(create_icon(backgroundcolor)))
 
-    # Если окно настроек уже открыто — обновим и его тоже
+    # If the settings window is already open - let's update it too
     if settings_win is not None and settings_label is not None:
         settings_win.configure(bg=backgroundcolor)
         settings_label.configure(bg=backgroundcolor, fg=foregroundcolor)
