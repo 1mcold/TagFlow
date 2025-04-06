@@ -26,9 +26,9 @@ That's how **TagFlow** was born — an easy-to-use tool for quickly inserting an
 ### Instructions:
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/1mcold/TagFlow.git
-   ```
+```bash
+git clone https://github.com/1mcold/TagFlow.git
+```
 3. Install the required dependencies:
   ```bash
   pip install -r requirements.txt
