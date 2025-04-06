@@ -29,7 +29,7 @@ That's how **TagFlow** was born — an easy-to-use tool for quickly inserting an
    ```bash
    git clone https://github.com/1mcold/TagFlow.git
    ```
-2. Install the required dependencies:
+3. Install the required dependencies:
   ```bash
   pip install -r requirements.txt
   ```
