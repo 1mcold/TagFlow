@@ -1,0 +1,4 @@
+keyboard==0.13.5
+pyperclip==1.8.2
+watchdog==2.1.6
+Pillow==8.4.0
