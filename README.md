@@ -1,5 +1,5 @@
 # TagFlow
-![status](https://img.shields.io/badge/status-beta-yellow)
+![Status](https://img.shields.io/badge/status-beta-yellow)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/Made%20with-Python-3776AB?logo=python&logoColor=white)
 ![Tags Support](https://img.shields.io/badge/Supports-Auto%20Tagging-green)
