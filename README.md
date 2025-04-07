@@ -2,6 +2,7 @@
 ![status](https://img.shields.io/badge/status-beta-yellow)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/Made%20with-Python-3776AB?logo=python&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-lightgrey)
 ![Tags Support](https://img.shields.io/badge/Supports-Auto%20Tagging-green)
 ![Open Source](https://badgen.net/badge/Open%20Source/Yes/green)
 ![Love](https://img.shields.io/badge/Made%20with-%E2%9D%A4-red)
