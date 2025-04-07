@@ -5,7 +5,7 @@
 ![Tags Support](https://img.shields.io/badge/Supports-Auto%20Tagging-green)
 ![Open Source](https://badgen.net/badge/Open%20Source/Yes/green)
 ![Love](https://img.shields.io/badge/Made%20with-%E2%9D%A4-red)
-![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-red)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-black)
 [![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?logo=github)](https://github.com/1mcold)
 
 TagFlow is a simple and effective tool designed to automate the process of inserting tags on platforms like **SoundCloud** and other websites where a large amount of repetitive data entry is required. The program saves time by automating the insertion of tags, which is especially useful when uploading a large number of tracks or other content.
