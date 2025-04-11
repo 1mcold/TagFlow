@@ -66,6 +66,11 @@ The program supports theme customization. You can select a theme by choosing a J
 - 🧠 Built with simplicity and flexibility
 - 🖤 100% open source and free
 
+## 📦 Download
+
+You can download the latest release here:  
+👉 [Releases](https://github.com/1mcold/TagFlow/releases)
+
 ## 🤝 Contributions
 If you have any ideas for improving the program or if you find any bugs, feel free to create issues or submit pull requests!
 
