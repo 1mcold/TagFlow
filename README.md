@@ -59,6 +59,12 @@ The program supports theme customization. You can select a theme by choosing a J
 ## 🖼️ Preview
 ![Image](https://github.com/user-attachments/assets/fcba608e-8587-4ee7-955e-a867583403d1)
 
+## ⭐ Why Use TagFlow?
+
+- 🔄 No more repetitive typing
+- ⏱ Saves time with hotkeys
+- 🧠 Built with simplicity and flexibility
+- 🖤 100% open source and free
 
 ## 🤝 Contributions
 If you have any ideas for improving the program or if you find any bugs, feel free to create issues or submit pull requests!
