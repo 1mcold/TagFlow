@@ -56,8 +56,8 @@ git clone https://github.com/1mcold/TagFlow.git
 ## 🎨 Themes
 The program supports theme customization. You can select a theme by choosing a JSON file with your preferred colors. You can create your own themes or use one of the predefined options.
 
-
-
+## 🖼️ Preview
+![Image](https://github.com/user-attachments/assets/fcba608e-8587-4ee7-955e-a867583403d1)
 
 
 ## 🤝 Contributions
