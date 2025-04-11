@@ -1,4 +1,4 @@
-# TagFlow
+# TagFlow ᵝ
 ![Status](https://img.shields.io/badge/Status-Beta-blue)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/Made%20with-Python-3776AB?logo=python&logoColor=white)
