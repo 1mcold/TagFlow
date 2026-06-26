@@ -27,6 +27,7 @@ import sys
 
 # Global Variables
 filename = "tags.txt"
+current_delay = 0.1
 tags = []  # List to hold tags
 index = 0  # Index to track the current tag
 autotyper_enabled = False  # Flag to control the state of the autotyper
@@ -64,7 +65,7 @@ def paste_next_tag():
             tag = tags[index]
             pyperclip.copy(tag)
             keyboard.press_and_release('ctrl+v')
-            time.sleep(0.1)  # Short delay to mimic typing speed
+            time.sleep(current_delay)  # Short delay to mimic typing speed
             keyboard.press_and_release('enter')
             index += 1
             update_label()
@@ -78,7 +79,7 @@ def auto_typing():
         tag = tags[index]
         pyperclip.copy(tag)
         keyboard.press_and_release('ctrl+v')
-        time.sleep(0.1)  # Adjust delay for typing speed
+        time.sleep(current_delay)  # Adjust delay for typing speed
         keyboard.press_and_release('enter')
         index += 1
         update_label()
@@ -123,24 +124,48 @@ def apply_theme(theme):
     backgroundcolorforbutton = current_theme["backgroundcolorforbutton"]
     foregroundcolor = current_theme["foregroundcolor"]
 
-    # Update the colors of the main window
+    # Обновим цвета главного окна
     root.configure(bg=backgroundcolor)
     status_label.configure(bg=backgroundcolor, fg=foregroundcolor)
     info_label.configure(bg=backgroundcolor, fg=foregroundcolor)
     info_label1.configure(bg=backgroundcolor, fg=foregroundcolor)
     root.iconphoto(False, ImageTk.PhotoImage(create_icon(backgroundcolor)))
 
-    # If the settings window is already open - let's update it too
+    # Если окно настроек уже открыто — обновим и его тоже
     if settings_win is not None and settings_label is not None:
         settings_win.configure(bg=backgroundcolor)
         settings_label.configure(bg=backgroundcolor, fg=foregroundcolor)
         btn_autotyper.configure(bg=backgroundcolorforbutton, fg=foregroundcolor, activebackground=backgroundcolorforbutton)
         btn_changetheme.configure(bg=backgroundcolorforbutton, fg=foregroundcolor, activebackground=backgroundcolorforbutton)
+        btn_changemode.configure(bg=backgroundcolorforbutton, fg=foregroundcolor, activebackground=backgroundcolorforbutton)
 
         settings_win.iconphoto(False, ImageTk.PhotoImage(create_icon(backgroundcolor)))
 
+
+def change_mode():
+    file_path = filedialog.askopenfilename(
+        title="Choose mode profile",
+        filetypes=[("JSON Files", "*.json")],
+        initialdir="modes"
+    )
+    if file_path:
+        try:
+            mode_config = load_mode_from_file(file_path)
+            apply_mode(mode_config)
+        except Exception as e:
+            messagebox.showerror("Mode Error", f"Failed to load mode: {e}")
+
+def load_mode_from_file(file_path):
+    with open(file_path, "r") as f:
+        return json.load(f)
+
+def apply_mode(mode_config):
+    global current_delay
+    current_delay = mode_config.get("delay", 0.1)
+    status_label.config(text=f"Mode loaded: {mode_config.get('platform', 'Unknown')}")
+
 def open_settings():
-    global settings_win, settings_label, btn_autotyper, btn_changetheme
+    global settings_win, settings_label, btn_autotyper, btn_changetheme, btn_changemode
 
     settings_win = tk.Toplevel(root)
     settings_win.title("Settings")
@@ -183,6 +208,18 @@ def open_settings():
                      command=change_theme)
     btn_changetheme.pack(pady=5, ipadx=10, ipady=5)
 
+    btn_changemode = tk.Button(settings_win, text="🧩 Change mode",
+                     font=(font_name, 12),
+                     bg=backgroundcolorforbutton,
+                     fg=foregroundcolor,
+                     activebackground=backgroundcolorforbutton,
+                     bd=0,
+                     relief="flat",
+                     cursor="hand2",
+                     highlightthickness=0,
+                     command=change_mode)
+    btn_changemode.pack(pady=5, ipadx=10, ipady=5)
+
 # Reset the tags list (start from the first tag)
 def reset_tags():
     global index
@@ -201,6 +238,10 @@ def start_hotkey_listener():
     keyboard.add_hotkey('F7', reset_tags)
     keyboard.add_hotkey('F6', open_settings)
     keyboard.add_hotkey('F2', exit_window)
+
+    keyboard.add_hotkey('Alt+T', change_theme)
+    keyboard.add_hotkey('Alt+A', toggle_autotyper)
+    keyboard.add_hotkey('Alt+M', change_mode)
 
 # File system event handler to watch changes in the tags file
 class TagFileHandler(FileSystemEventHandler):
